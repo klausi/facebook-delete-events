@@ -5,8 +5,8 @@
 // @license     GPLv2; https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 // @homepageURL https://github.com/klausi/facebook-delete-events
 // @author      klausi
-// @include     https://www.facebook.com/events/past
-// @version     1
+// @include     https://www.facebook.com/events/past/
+// @version     2
 // @grant       none
 // ==/UserScript==
 
@@ -14,11 +14,11 @@ var input=document.createElement("input");
 input.type="button";
 input.value="Delete all past events";
 input.onclick = deleteAllPastEvents;
-prependChild(document.getElementById('mainContainer'), input);
+prependChild(document.getElementById('content_container'), input);
 
 function deleteAllPastEvents() {
     // Get all the remove event links and click them.
-    var remove_links = document.querySelectorAll('[data-tooltip-content = "Remove Event"]');
+    var remove_links = document.querySelectorAll('[tooltip = "Remove Event"]');
     remove_links.forEach(function(link) {
         link.click();
     });
