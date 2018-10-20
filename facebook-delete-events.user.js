@@ -5,24 +5,24 @@
 // @license     GPL-2.0; https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 // @homepageURL https://github.com/klausi/facebook-delete-events
 // @author      klausi
-// @include     https://www.facebook.com/events/past/
-// @version     2
+// @include     https://www.facebook.com/events/calendar/past/
+// @version     3
 // @grant       none
 // ==/UserScript==
 
-var input=document.createElement("input");
-input.type="button";
-input.value="Delete all past events";
+var input = document.createElement("input");
+input.type = "button";
+input.value = "Delete all past events";
 input.onclick = deleteAllPastEvents;
 prependChild(document.getElementById('content_container'), input);
 
 function deleteAllPastEvents() {
     // Get all the remove event links and click them.
-    var remove_links = document.querySelectorAll('[tooltip = "Remove Event"]');
-    remove_links.forEach(function(link) {
+    var remove_links = document.querySelectorAll('#events_dashboard_calendar .rfloat div[data-hover = "tooltip"]');
+    remove_links.forEach(function (link) {
         link.click();
     });
-  
+
     // There might be more events left if we scroll down completely.
     if (remove_links.length !== 0) {
         window.scrollTo(0, document.body.scrollHeight);
