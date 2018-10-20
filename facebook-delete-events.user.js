@@ -2,7 +2,7 @@
 // @name        Facebook delete past events
 // @namespace   klausi
 // @description Deletes all your past events on Facebook
-// @license     GPL-2.0; https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+// @license     GPL-2.0-or-later
 // @homepageURL https://github.com/klausi/facebook-delete-events
 // @author      klausi
 // @include     https://www.facebook.com/events/calendar/past/
